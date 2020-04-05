@@ -2,22 +2,36 @@
 CC = g++
 
 # macro says using c++11 standard
-CFLAGS = -Wall -g
+CFLAGS = -std=c++11 -c
 
 #run "make all" in the command line to compile all 3 programs
-all: insertsort.o mergesort.o
+all: insertsort merge
+
+#merge sort program
+merge: mergesort.o
+	$(CC) mergesort.o -o merge
+
+mergesort.o:
+	$(CC) $(CFLAGS) mergesort.cpp
+
+#insert sort program
+insert: insertsort.o
+	$(CC) insertsort.o -o insert
+
+insertsort.o:
+	$(CC) $(CFLAGS) insertsort.cpp
 
 # make command for insert sort program
-insert: insertsort.o
+#insert: insertsort.o
 
-insertsort.o: insertsort.cpp data.txt
-	$(CC) $(CFLAGS) insertsort.cpp -o data.txt
+#insertsort.o: insertsort.cpp data.txt
+#	$(CC) $(CFLAGS) -o insertsort.cpp data.txt
 
 # make command for merge sort program
-merge: mergesort.o
+#merge: mergesort.o
 
-mergesort.o: mergesort.cpp data.txt
-	$(CC) $(CFLAGS) mergesort.cpp -o data.txt
+#mergesort.o: mergesort.cpp data.txt
+#	$(CC) $(CFLAGS) mergesort.cpp -o data.txt
 
 # data.txt file for testing
 #data.txt:
@@ -27,6 +41,6 @@ mergesort.o: mergesort.cpp data.txt
 
 clean:
 	rm *.o
-	rm -f merge.out
-	rm -f insert.out
+#	rm -f merge.out
+#	rm -f insert.out
 #	rm -f *.txt
