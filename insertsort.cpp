@@ -46,7 +46,7 @@ int main(){
     ofstream outfile1("insert.out");
 
     // write content from the sorted array into the output file
-    for( i = 0 ; i <=len ; i++ ){
+    for( i = 1 ; i <=len ; i++ ){
         outfile1<<arr1[i]<<" ";       
     }
 

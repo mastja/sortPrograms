@@ -22,17 +22,6 @@ insert: insertsort.o
 insertsort.o:
 	$(CC) $(CFLAGS) insertsort.cpp
 
-# make command for insert sort program
-#insert: insertsort.o
-
-#insertsort.o: insertsort.cpp data.txt
-#	$(CC) $(CFLAGS) -o insertsort.cpp data.txt
-
-# make command for merge sort program
-#merge: mergesort.o
-
-#mergesort.o: mergesort.cpp data.txt
-#	$(CC) $(CFLAGS) mergesort.cpp -o data.txt
 
 # data.txt file for testing
 #data.txt:
@@ -42,6 +31,6 @@ insertsort.o:
 
 clean:
 	rm *.o
-#	rm -f merge.out
-#	rm -f insert.out
+	rm -f merge.out
+	rm -f insert.out
 #	rm -f *.txt

@@ -43,13 +43,14 @@ int main(){
        program takes an array of unsorted positive integers and sorts into increasing order
        using the merge sort algorithm
     */    
-    merge_sort( arr1, 1 , len );
+    merge_sort(arr1, 1, len);
+    cout<<endl;
 
     // open output file in write mode
     ofstream outfile1("merge.out");
 
     // write content from the sorted array into the output file
-    for( i = 0 ; i <= len ; i++ ){
+    for( i = 1 ; i <= len ; i++ ){
         outfile1<<arr1[i]<<" ";
     }   
 
@@ -59,7 +60,7 @@ int main(){
 
 // merge_sort function sorts an array using the merge sort alorithm
 
-void merge_sort(int arr[],int m, int n){
+void merge_sort(int arr[], int m, int n){
 
     // if there is more than one value in the array
     if(m < n){
