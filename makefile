@@ -9,7 +9,7 @@ all: insertsort mergesort
 
 # make command for insert sort program
 insertsort: insertsort.o
-	$(CC) $(CFLAGS) -o insertsort.cpp data.txt
+	$(CC) $(CFLAGS) insertsort.cpp -o data.txt
 
 # make command for merge sort program
 mergesort: mergesort.o
