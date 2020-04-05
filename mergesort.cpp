@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<fstream>
+#include<assert>
 #include<limits>
 using namespace std;
 
@@ -22,6 +23,7 @@ int main(){
     // create variable for array length
     int len;
 
+    while (!fin.eof( )){
     // In HW prompt - the first value in the input stream is the number of values to be sorted
     infile>>len;
 
@@ -53,6 +55,11 @@ int main(){
     for( i = 1 ; i <= len ; i++ ){
         outfile1<<arr1[i]<<" ";
     }   
+    outfile1<<endl;
+    }
+
+    // close the opened file.
+    infile.close();
 
     return 0;
 }
@@ -99,12 +106,12 @@ void merge(int arr[], int p, int q, int r) {
     int *right = new int[len2 + 1];
 
     // fill left with contents of left subarray of arr
-    for(i = 0; i < len; i++){
+    for(i = 1; i <= len; i++){
         left[i] = arr[p + i - 1];
     }
 
     // fill right w contents of right subarray of arr
-    for(i = 0; i < len2; i++){
+    for(i = 1; i <= len2; i++){
         right[i] = arr[q + i];
     }
 
@@ -112,8 +119,8 @@ void merge(int arr[], int p, int q, int r) {
     left[len + 1] = std::numeric_limits<int>::max();
     right[len2 + 1] = std::numeric_limits<int>::max();
 
-    i=0;
-    j=0;
+    i=1;
+    j=1;
 
     //repeat the loop below for the length of the array (r - p + 1)
 
