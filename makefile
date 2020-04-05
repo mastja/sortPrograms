@@ -10,13 +10,13 @@ all: insertsort.o mergesort.o
 # make command for insert sort program
 insert: insertsort.o
 
-insertsort.o: insertsort.cpp
+insertsort.o: insertsort.cpp data.txt
 	$(CC) $(CFLAGS) insertsort.cpp -o data.txt
 
 # make command for merge sort program
 merge: mergesort.o
 
-mergesort.o: mergesort.o
+mergesort.o: mergesort.cpp data.txt
 	$(CC) $(CFLAGS) mergesort.cpp -o data.txt
 
 # data.txt file for testing
