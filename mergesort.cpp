@@ -62,11 +62,13 @@ int main(){
 
 void merge_sort(int arr[], int m, int n){
 
+    int mid;
+
     // if there is more than one value in the array
     if(m < n){
 
         // get mid index
-        int mid = (m + n) / 2;
+        mid = (m + n) / 2;
 
         // recursive call to sort the left subarray
         merge_sort(arr, m, mid);
@@ -93,8 +95,8 @@ void merge(int arr[], int p, int q, int r) {
     int i, j, k;
 
     // create two arrays left and right
-    int *left = new int[len + 1];
-    int *right = new int[len2 + 1];
+    int left[len + 1];
+    int right[len2 + 1];
 
     // fill left with contents of left subarray of arr
     for(i = 1; i < len; i++){
