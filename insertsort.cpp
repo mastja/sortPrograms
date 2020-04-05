@@ -20,7 +20,7 @@ int main(){
     int len;
 
     // In HW prompt - the first value in the input stream is the number of values to be sorted
-    in>>len;
+    infile>>len;
 
     // create array of size len, add 1 spot to hold integer list length value
     int arr1[len + 1];

@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<fstream>
+#include<limits>
 using namespace std;
 
 void merge_sort(int arr[], int m, int n);
@@ -22,7 +23,7 @@ int main(){
     int len;
 
     // In HW prompt - the first value in the input stream is the number of values to be sorted
-    in>>len;
+    infile>>len;
 
     // create array of size len, add 1 spot to hold integer list length value
     int arr1[len + 1];
@@ -104,9 +105,9 @@ void merge(int arr[], int p, int q, int r) {
         right[i] = arr[q + i];
     }
 
-    // set last element of each array to INT_MAX or infinity, which is our sentinel value
-    left[len] = INT_MAX;
-    right[len2] = INT_MAX;
+    // set last element of each array to the max int value or infinity, which is our sentinel value
+    left[len] = std::numeric_limits<int>::max();
+    right[len2] = std::numeric_limits<int>::max();
 
     i=1;
     j=1;
