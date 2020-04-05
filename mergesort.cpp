@@ -23,6 +23,9 @@ int main(){
     // create variable for array length
     int len;
 
+    // open output file in write mode
+    ofstream outfile1("merge.out");
+
     while (!fin.eof( )){
     // In HW prompt - the first value in the input stream is the number of values to be sorted
     infile>>len;
@@ -46,10 +49,6 @@ int main(){
        using the merge sort algorithm
     */    
     merge_sort(arr1, 1, len);
-    cout<<endl;
-
-    // open output file in write mode
-    ofstream outfile1("merge.out");
 
     // write content from the sorted array into the output file
     for( i = 1 ; i <= len ; i++ ){
