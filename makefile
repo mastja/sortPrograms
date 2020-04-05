@@ -5,14 +5,18 @@ CC = g++
 CFLAGS = -Wall -g
 
 #run "make all" in the command line to compile all 3 programs
-all: insertsort mergesort
+all: insertsort.o mergesort.o
 
 # make command for insert sort program
-insertsort: insertsort.o
+insert: insertsort.o
+
+insertsort.o: insertsort.cpp
 	$(CC) $(CFLAGS) insertsort.cpp -o data.txt
 
 # make command for merge sort program
-mergesort: mergesort.o
+merge: mergesort.o
+
+mergesort.o: mergesort.o
 	$(CC) $(CFLAGS) mergesort.cpp -o data.txt
 
 # data.txt file for testing
