@@ -5,17 +5,17 @@ CC = g++
 # macro says using c++11 standard
 CFLAGS = -std=c++11 -c
 
-#run "make all" in the command line to compile all 3 programs
+# run "make all" to run both mergesort and insertsort
 all: insertsort mergesort
 
-#merge sort program
+# make the merge sort program
 merge: mergesort.o
 	$(CC) mergesort.o -o merge
 
 mergesort.o:
 	$(CC) $(CFLAGS) mergesort.cpp
 
-#insert sort program
+# make the insert sort program
 insert: insertsort.o
 	$(CC) insertsort.o -o insert
 
@@ -23,14 +23,9 @@ insertsort.o:
 	$(CC) $(CFLAGS) insertsort.cpp
 
 
-# data.txt file for testing
-#data.txt:
-#	echo "4 19 2 5 11" > data.txt
-#	echo "8 1 2 3 4 5 6 1 2" >> data.txt
-
-
 clean:
 	rm *.o
 	rm -f merge.out
 	rm -f insert.out
-#	rm -f *.txt
+	rm mergesort
+	rm insertsort

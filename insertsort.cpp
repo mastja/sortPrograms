@@ -7,48 +7,59 @@
 
 #include<iostream>
 #include<fstream>
+#include<assert.h>
 using namespace std;
 
 void insertion_sort(int arr[], int n);
 
 int main(){
 
+    // open the input file to read from it
     ifstream infile("data.txt");
+
+    // open output file in write mode
+    ofstream outfile1("insert.out");
 
     //steps for insertion sort
     // create variable for array length
     int len;
 
-    // In HW prompt - the first value in the input stream is the number of values to be sorted
-    infile>>len;
+    // read from file, so long as we have not reached the end of file
 
-    // create array of size len, add 1 spot to hold integer list length value
-    int arr1[len + 1];
+    while (!infile.eof( )){
 
-    // store the array length as the first value of the sorted array
-    arr1[0] = len;
+        // In HW prompt - the first value in the input stream is the number of values to be sorted
+        infile>>len;
 
-    // counter variable
-    int i;
+        // create array of size len, add 1 spot to hold integer list length value
+        int arr1[len + 1];
 
-    // read content from file, and write to the array
-    for( i = 1 ; i <= len ; i++ ){
-        infile>>arr1[i];
+        // store the array length as the first value of the sorted array
+        arr1[0] = len;
+
+        // counter variable
+        int i;
+
+        // read content from file, and write to the array
+        for( i = 1 ; i <= len ; i++ ){
+            infile>>arr1[i];
+        }
+
+        /* run insertion sort function, declared above and written below
+        program takes an array of unsorted positive integers and sorts into increasing order
+        */
+        insertion_sort(arr1 , len + 1);
+        cout<<endl;
+
+        // write content from the sorted array into the output file
+        for( i = 1 ; i <=len ; i++ ){
+            outfile1<<arr1[i]<<" ";       
+        }
+        outfile1<<endl;
     }
 
-    /* run insertion sort function, declared above and written below
-       program takes an array of unsorted positive integers and sorts into increasing order
-    */
-    insertion_sort(arr1 , len + 1);
-    cout<<endl;
-
-    // open output file in write mode
-    ofstream outfile1("insert.out");
-
-    // write content from the sorted array into the output file
-    for( i = 1 ; i <=len ; i++ ){
-        outfile1<<arr1[i]<<" ";       
-    }
+    // close the opened file.
+    infile.close();
 
     return 0;
 

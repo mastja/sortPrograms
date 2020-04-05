@@ -7,7 +7,7 @@
 
 #include<iostream>
 #include<fstream>
-#include<assert>
+#include<assert.h>
 #include<limits>
 using namespace std;
 
@@ -17,6 +17,7 @@ void merge(int arr[], int p, int q, int r);
 
 int main(){
 
+    //open the input file to read from it
     ifstream infile("data.txt");
 
     // steps for merge sort
@@ -26,35 +27,37 @@ int main(){
     // open output file in write mode
     ofstream outfile1("merge.out");
 
-    while (!fin.eof( )){
-    // In HW prompt - the first value in the input stream is the number of values to be sorted
-    infile>>len;
+    // read from file, so long as we have not reached the end of file
+    while (!infile.eof( )){
+        // In HW prompt - the first value in the input stream is the number 
+        // of values to be sorted
+        infile>>len;
 
-    // create array of size len, add 1 spot to hold integer list length value
-    int arr1[len + 1];
+        // create array of size len, add 1 spot to hold integer list length value
+        int arr1[len + 1];
 
-    // store the array length as the first value of the sorted array
-    arr1[0] = len;
+        // store the array length as the first value of the sorted array
+        arr1[0] = len;
 
-    // counter variable
-    int i;
+        // counter variable
+        int i;
 
-    // read content from file, and write to the array
-    for( i = 1 ; i <= len ; i++ ){
-        infile>>arr1[i];
-    }
+        // read content from file, and write to the array
+        for( i = 1 ; i <= len ; i++ ){
+            infile>>arr1[i];
+        }
 
-    /* run merge sort function, declared above and written below
-       program takes an array of unsorted positive integers and sorts into increasing order
-       using the merge sort algorithm
-    */    
-    merge_sort(arr1, 1, len);
+        /* run merge sort function, declared above and written below
+        program takes an array of unsorted positive integers and sorts into
+        increasing order using the merge sort algorithm
+        */    
+        merge_sort(arr1, 1, len);
 
-    // write content from the sorted array into the output file
-    for( i = 1 ; i <= len ; i++ ){
-        outfile1<<arr1[i]<<" ";
-    }   
-    outfile1<<endl;
+        // write content from the sorted array into the output file
+        for( i = 1 ; i <= len ; i++ ){
+            outfile1<<arr1[i]<<" ";
+        }   
+        outfile1<<endl;
     }
 
     // close the opened file.
@@ -114,7 +117,8 @@ void merge(int arr[], int p, int q, int r) {
         right[i] = arr[q + i];
     }
 
-    // set last element of each array to the max int value or infinity, which is our sentinel value
+    // set last element of each array to the max int value or infinity,
+    // which is our sentinel value
     left[len + 1] = std::numeric_limits<int>::max();
     right[len2 + 1] = std::numeric_limits<int>::max();
 
