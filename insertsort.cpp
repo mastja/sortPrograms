@@ -76,7 +76,7 @@ void insertion_sort(int arr[], int n){
 
         // compare the key to the value indexed at previous spot, if key is less than, continue while loop
         // while loop exits when key is greater than or equal to value indexed at previous spot
-        while (j >= 0 && arr[j] > key){
+        while (j > 0 && arr[j] > key){
 
             // since the key is less than the value at index j, j is moved to index spot of j+1
             arr[j+1] = arr[j];

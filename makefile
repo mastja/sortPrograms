@@ -1,3 +1,4 @@
+
 # macro tells which compiler to use
 CC = g++
 
@@ -5,7 +6,7 @@ CC = g++
 CFLAGS = -std=c++11 -c
 
 #run "make all" in the command line to compile all 3 programs
-all: insertsort merge
+all: insertsort mergesort
 
 #merge sort program
 merge: mergesort.o
