@@ -95,25 +95,25 @@ void merge(int arr[], int p, int q, int r) {
     int i, j, k;
 
     // create two arrays left and right
-    int left[len + 1];
-    int right[len2 + 1];
+    int *left = new int[len + 1];
+    int *right = new int[len2 + 1];
 
     // fill left with contents of left subarray of arr
-    for(i = 1; i < len; i++){
+    for(i = 0; i < len; i++){
         left[i] = arr[p + i - 1];
     }
 
     // fill right w contents of right subarray of arr
-    for(i = 1; i < len2; i++){
+    for(i = 0; i < len2; i++){
         right[i] = arr[q + i];
     }
 
     // set last element of each array to the max int value or infinity, which is our sentinel value
-    left[len] = std::numeric_limits<int>::max();
-    right[len2] = std::numeric_limits<int>::max();
+    left[len + 1] = std::numeric_limits<int>::max();
+    right[len2 + 1] = std::numeric_limits<int>::max();
 
-    i=1;
-    j=1;
+    i=0;
+    j=0;
 
     //repeat the loop below for the length of the array (r - p + 1)
 
