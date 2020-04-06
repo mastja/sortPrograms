@@ -1,7 +1,7 @@
-/*  Project Name : Merge and Insertion Sort
+/*  Project Name : Insertion Sort
     Date: 4/5/2020
     Programmer: Jacob Mast
-    Description: two functions are included, one for merge sort and one for insertion sort
+    Description: The program to run the insertion sort algorithm in c++
 */
 
 
