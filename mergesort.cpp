@@ -60,8 +60,9 @@ int main(){
         outfile1<<endl;
     }
 
-    // close the opened file.
+    // close the opened files.
     infile.close();
+    outfile1.close();
 
     return 0;
 }
