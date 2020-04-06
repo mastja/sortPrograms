@@ -1,4 +1,4 @@
-# Sortingprograms
+# Sorting Programs
 Insertion Sort and Merge Sort in c++
 
 Compiled with makefile
