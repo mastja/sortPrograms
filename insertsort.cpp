@@ -49,7 +49,6 @@ int main(){
         program takes an array of unsorted positive integers and sorts into increasing order
         */
         insertion_sort(arr1 , len + 1);
-        cout<<endl;
 
         // write content from the sorted array into the output file
         for( i = 1 ; i <=len ; i++ ){
